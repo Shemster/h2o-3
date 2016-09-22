@@ -782,7 +782,7 @@ na.omit.H2OFrame <- h2o.na_omit
 
 #' Filter frame by column type
 #'
-#' @rdname filterByType
+#' @rdname filter_type
 #' @param object H2OFrame object
 #' @param type A character string indicating which column type to filter by. This must be one of the following:
 #'   "numeric"      - Numeric, but not categorical or time
@@ -797,10 +797,10 @@ na.omit.H2OFrame <- h2o.na_omit
 #' h2o.init()
 #' prosPath <- system.file("extdata", "prostate.csv", package="h2o")
 #' prostate.hex <- h2o.uploadFile(path = prosPath)
-#' h2o.filterByType(prostate.hex,type="numeric")
+#' h2o.filter_type(prostate.hex,type="numeric")
 #' }
 #' @export
-h2o.filterByType <- function(object,type="numeric",...){
+h2o.filter_type <- function(object,type="numeric",...){
   .eval.scalar(.newExpr("filterByType", object,.quote(type))) + 1
 }
 
