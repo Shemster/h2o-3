@@ -335,7 +335,7 @@ class Test_glm_grid_search:
             self.correct_model_number = len(grid_model)     # store number of models built
 
             # make sure the correct number of models are built by gridsearch
-            if not (self.correct_model_number == self.possible_number_models):  # wrong grid model number
+            if (self.correct_model_number - self.possible_number_models)>0.9:  # wrong grid model number
                 self.test_failed += 1
                 self.test_failed_array[self.test_num] = 1
                 print("test_glm_search_over_params for GLM failed: number of models built by gridsearch: {0} "
