@@ -234,7 +234,8 @@ class Test_rf_gridsearch_sorting_metrics:
                 grid_model_metrics.append(grid_model_metric)
 
                 manual_metric = each_model._model_json["output"]["cross_validation_metrics"]._metric_json["logloss"]
-                diff += abs(grid_model_metric - manual_metric)
+                if not(type(grid_model_metrics) == unicode) and not(type(manual_metric)==unicode):
+                    diff += abs(grid_model_metric - manual_metric)
 
                 manual_training_metric = each_model._model_json["output"]["training_metrics"]._metric_json["logloss"]
                 if not(type(grid_model_metrics) == unicode) and not(type(manual_training_metric)==unicode):
