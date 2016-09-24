@@ -792,6 +792,7 @@ na.omit.H2OFrame <- h2o.na_omit
 #'   "uuid"         - UUID
 #'   "bad"          - No none-NA rows (triple negative! all NAs or zero rows)
 #' @param ... Ignored
+#' @return A list of column indices that correspond to "type"
 #' @examples
 #' \donttest{
 #' h2o.init()
